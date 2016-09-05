@@ -28,3 +28,17 @@ Edit the do-copy.sh script in an editor. Change the nodes list for your node lis
 ```
 # ./do-copy /etc/hosts
 ```
+
+More examples
+-----
+```
+./do “yum install -y ksh"
+./do “yum install -y ntp"
+./do “systemctl start ntpd.service"
+./do “systemctl entable ntpd.service"
+./do “ntpstat"
+./do “systemctl restart ntpd.service"
+./do “setenforce 0”
+./do-copy /etc/sysconfig/selinux
+./do “systemctl stopfirewalld"
+```
