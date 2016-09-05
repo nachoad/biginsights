@@ -7,5 +7,5 @@ declare -a nodes=(
 
 for i in "${nodes[@]}"
 do
-     scp "$1" "$i":"1"
+     scp "$1" "$i":"$1"
 done
