@@ -20,11 +20,9 @@ do-copy.sh
 **How to use it**:
 Edit the do-copy.sh script in an editor. Change the nodes list for your node list. Change the permissions of the script, and run it!
 
-```
-// Change permissions
-# chmod +x ./do-copy
-```
-> Example. Copy /etc/hosts in all the nodes in just one command.
+[Change permissions](#Changing-permissions) of the file if needed. 
+
+Example. Copy /etc/hosts in all the nodes in just one command.
 ```
 # ./do-copy /etc/hosts
 ```
@@ -46,12 +44,6 @@ fetch first 10 rows only;
 # ./jsqsh.sh -i query.sql
 ```
 
-```
-// Changing permissions if needed
-# chmod +x ./jsqsh.sh
-```
-
-
 
 More examples
 -----
@@ -65,4 +57,11 @@ More examples
 ./do “setenforce 0”
 ./do-copy /etc/sysconfig/selinux
 ./do “systemctl stopfirewalld"
+```
+
+#Changing permissions
+```
+// Changing permissions if needed
+# chmod +x ./jsqsh.sh
+# chmod +x ./do-copy
 ```
