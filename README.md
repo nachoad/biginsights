@@ -5,13 +5,13 @@ Scripts and other stuff for IBM BigInsights
 #### How to use it
 Edit the do.sh script in an editor. Change the nodes list for your node list. Change the permissions of the script, and run it!
 
-[Change permissions](#Permissions) of the new file created if needed.
-
 #### Example
 List the hostnames of all the nodes with one command.
 ```
 # ./do “hostname”
 ```
+
+[Change permissions](#Permissions) of the new file created if needed.
 
 # do-copy.sh
 #### How to use it
@@ -33,7 +33,7 @@ _Note: Before of this, you must have the connection to the DB configured. If not
 
 #### query.sql file example
 ```
-select tabschema, colname, colno,typename, length
+select tabschema, colname, colno, typename, length
 from syscat.columns
 fetch first 10 rows only;
 ```
