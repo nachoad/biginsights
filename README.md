@@ -61,7 +61,8 @@ More examples
 ./do “systemctl stopfirewalld"
 ```
 
-# Permissions
+Permissions
+-------
 If you have issues with the permissions, just change the permissions of the new files:
 ```
 // Changing permissions if needed
