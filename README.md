@@ -11,7 +11,7 @@ List the hostnames of all the nodes with one command.
 # ./do “hostname”
 ```
 
-[Change permissions](#Permissions) of the new file created if needed.
+[Change permissions](#permissions) of the new file created if needed.
 
 # do-copy.sh
 #### How to use it
@@ -23,7 +23,7 @@ Copy /etc/hosts in all the nodes in just one command.
 # ./do-copy /etc/hosts
 ```
 
-[Change permissions](#Permissions) of the new file created if needed.
+[Change permissions](#permissions) of the new file created if needed.
 
 # jsqsh.sh
 #### How to use it
@@ -42,7 +42,7 @@ fetch first 10 rows only;
 # ./jsqsh.sh -i query.sql
 ```
 
-[Change permissions](#Permissions) of the new file created if needed.
+[Change permissions](#permissions) of the new file created if needed.
 
 # More examples
 ```
