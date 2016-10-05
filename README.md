@@ -1,6 +1,17 @@
 Scripts and other stuff for IBM BigInsights
 ========================================
 
+# URLs in a BigInsights installation (default)
+Ambari console:
+```
+http://<ip-biginsights>:8080
+```
+
+BigInsights Home:
+```
+https://<ip-biginsights>:8443/gateway/default/BigInsightsWeb/index.html
+```
+
 # do.sh
 #### How to use it
 Edit the do.sh script in an editor. Change the nodes list for your node list. Change the permissions of the script, and run it!
