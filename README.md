@@ -29,6 +29,23 @@ Edit the do-copy.sh script in an editor. Change the nodes list for your node lis
 # ./do-copy /etc/hosts
 ```
 
+jsqsh.sh
+-------
+**How to use it**:
+Edit the jsqsh.sh script in an editor. Change the variable _path_ of your JSqsh if needed. Create a query.sql on the same folder, and execute the script:
+
+> Example.
+```
+# jsqsh.sh query.sql
+```
+
+```
+// Changing permissions if needed
+# chmod +x ./do-copy
+```
+
+
+
 More examples
 -----
 ```
