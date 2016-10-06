@@ -6,10 +6,10 @@ Scripts and other stuff for IBM BigInsights
 - [URLs in BigInsights](#urls-in-a-biginsights-installation-default)
 - [Scripts](#scripts)
     - [Do](#dosh): Script for execute commands in various nodes with one command.
-    - [Do-copy](#docopysh): Script for copy from one node to various nodes.
+    - [Do-copy](#do-copysh): Script for copy from one node to various nodes.
     - [JSqsh](#jsqshsh): Script for easy access to JSqsh.
 
-    
+
 
 # URLs in a BigInsights installation (default)
 Ambari console:
