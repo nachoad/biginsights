@@ -8,7 +8,7 @@ Scripts and other stuff for IBM BigInsights
     - [Do](#dosh): Script for execute commands in various nodes with one command.
     - [Do-copy](#do-copysh): Script for copy from one node to various nodes.
     - [JSqsh](#jsqshsh): Script for easy access to JSqsh.
-
+- [Examples of use](#more-examples)
 
 
 # URLs in a BigInsights installation (default)
