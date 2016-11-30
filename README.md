@@ -98,7 +98,7 @@ Run the script:
 Copy this script into the folder where you have the files. Give it the permissions to execute it.
 Run the script:
 ```
-./loadonecsv.sh <DESTINATION-FOLDER-NAME>
+./copyfilesto.sh <DESTINATION-FOLDER-NAME>
 ```
 
 [Change permissions](#permissions) of the new file created if needed.
