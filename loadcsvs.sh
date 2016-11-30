@@ -8,9 +8,12 @@ do
 	f=${csvfile%%.*}
 
 	## Deleting possible ddl files that already exists on the folder
-        rm $f.ddl
+       	if [ -f $f.ddl ]; then
+		rm $f.ddl
+	fi
 
 	## Creating the load statement on a ddl file
+	echo "@@@@@@@@@@@@@@@"
 	echo "Creating the $f.ddl file for the load on BigSQL..."
         echo "load hadoop using file url '/files/$csvfile' with source properties ('field.delimiter'='|','ignore.extra.fields'='false', 'date.time.format'='yyyyMMdd') into table ZWH.$f overwrite with load properties ('rejected.records.dir'='/tmp/rejected_records/$f.out','max.rejected.records'=0,'num.map.tasks'=8);" >> $f.ddl
 	
@@ -19,7 +22,6 @@ do
         /usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh bigsql -i $f.ddl > jsqsh-$f.out
 	
 	## Seeing the output
-	echo "---------------"
-	echo "JSQSH output of jsqsh-$f.out"
-	cat jsqsh-$f.out
+	echo "---- JSQSH output of jsqsh-$f.out: ----"
+	cat jsqsh-$f.out 
 done
