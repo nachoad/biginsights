@@ -15,10 +15,10 @@ if [ ! -d ./out ];then
   mkdir out
 fi
 if [ -f ./ddl/$f.ddl ]; then
-	rm $f.ddl
+	rm ./ddl/$f.ddl
 fi
 if [ -f ./out/jsqsh-$f.out ];then
-	rm jsqsh-$f.out
+	rm ./out/jsqsh-$f.out
 fi
 
 ## Creating the load statement on a ddl file
@@ -28,7 +28,7 @@ echo "load hadoop using file url '/files/$csvfile' with source properties ('fiel
 
 ## Loading the data with JQSH
 echo "Loading the data of the $f table on BigSQL with JSQSH."
-/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh bigsql -i $f.ddl 2> ./out/jsqsh-$f.out
+/usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh bigsql -i ./ddl/$f.ddl 2> ./out/jsqsh-$f.out
 
 ## Seeing the output
 echo "---- JSQSH output of jsqsh-$f.out: ----"
