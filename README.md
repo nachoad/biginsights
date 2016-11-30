@@ -77,7 +77,9 @@ fetch first 10 rows only;
 #### How to use it
 Copy this script into the folder where you have the CSV files. Give it the permissions to execute it.
 Run the script:
+```
 ./loadcsvs.sh
+```
 
 [Change permissions](#permissions) of the new file created if needed.
 
@@ -85,7 +87,9 @@ Run the script:
 #### How to use it
 Copy this script into the folder where you have the CSV file. Give it the permissions to execute it.
 Run the script:
+```
 ./loadonecsv.sh <FILE-TO-LOAD.csv>
+```
 
 [Change permissions](#permissions) of the new file created if needed.
 
@@ -93,7 +97,9 @@ Run the script:
 #### How to use it
 Copy this script into the folder where you have the files. Give it the permissions to execute it.
 Run the script:
+```
 ./loadonecsv.sh <DESTINATION-FOLDER-NAME>
+```
 
 [Change permissions](#permissions) of the new file created if needed.
 
