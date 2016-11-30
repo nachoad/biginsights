@@ -3,8 +3,10 @@
 ## Use: copyfilesto.sh <destination-folder-name>
 
 declare -a files=(
-  1234.csv
-  hola.csv
+  file1.csv
+  file2.csv
+  file3.txt
+  file4.txt
 )
 
 if [ ! -d ./$1 ];then

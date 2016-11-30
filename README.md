@@ -8,6 +8,9 @@ Scripts and other stuff for IBM BigInsights
     - [Do](#dosh): Script for execute commands in various nodes with one command.
     - [Do-copy](#do-copysh): Script for copy from one node to various nodes.
     - [JSqsh](#jsqshsh): Script for easy access to JSqsh.
+    - [LoadCSVs](#loadcsvs): Script for load CSV files from a folder to their BigSQL tables.
+    - [LoadOneCSV](#loadonecsv): Script for load only one CSV file from a folder to BigSQL table.
+    - [CopyFilesTo](#copyfilesto): Script for copy the files on the array to a folder given.
 - [Examples of use](#more-examples)
 
 
@@ -68,6 +71,32 @@ fetch first 10 rows only;
 ```
 
 [Change permissions](#permissions) of the new file created if needed.
+
+
+## loadcsvs.sh
+#### How to use it
+Copy this script into the folder where you have the CSV files. Give it the permissions to execute it.
+Run the script:
+./loadcsvs.sh
+
+[Change permissions](#permissions) of the new file created if needed.
+
+## loadonecsv.sh
+#### How to use it
+Copy this script into the folder where you have the CSV file. Give it the permissions to execute it.
+Run the script:
+./loadonecsv.sh <FILE-TO-LOAD.csv>
+
+[Change permissions](#permissions) of the new file created if needed.
+
+## copyfilesto.sh
+#### How to use it
+Copy this script into the folder where you have the files. Give it the permissions to execute it.
+Run the script:
+./loadonecsv.sh <DESTINATION-FOLDER-NAME>
+
+[Change permissions](#permissions) of the new file created if needed.
+
 
 # More examples
 ```
