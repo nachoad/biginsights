@@ -1,9 +1,9 @@
-######################################################################
-## Loading all the csv files from a folder, into their BigSQL tables 
-######################################################################
+########################################################
+## Loading one csv file, into a BigSQL table 
+#########################################################
 
-for csvfile in *.csv
-do
+csvfile=$1
+
         ## f is a variable with the name of the file, without the extension
 	f=${csvfile%%.*}
 
@@ -24,4 +24,3 @@ do
 	## Seeing the output
 	echo "---- JSQSH output of jsqsh-$f.out: ----"
 	cat jsqsh-$f.out 
-done
