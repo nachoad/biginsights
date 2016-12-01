@@ -1,5 +1,6 @@
 ########################################################
-## Loading one csv file, into a BigSQL table
+## Loading one csv file given in the call, into a BigSQL table
+## Use: ./loadonecsv.sh <CSV-TO-LOAD>
 #########################################################
 
 csvfile=$1
