@@ -3,6 +3,12 @@
 ## Use: ./loadonecsv.sh <CSV-TO-LOAD>
 #########################################################
 
+if [ $# -ne 1 ]; then
+	echo "Input file needed. You have to pass a parameter to the script";
+  # Exit
+  exit 64
+fi
+
 csvfile=$1
 
 ## f is a variable with the name of the file, without the extension
@@ -25,7 +31,10 @@ fi
 ## Creating the load statement on a ddl file
 echo -e "\n@@@@@@@@@@@@@@@"
 echo "Creating the $f.ddl file for the load on BigSQL..."
-echo "load hadoop using file url '/files/$csvfile' with source properties ('field.delimiter'='|','ignore.extra.fields'='false', 'date.time.format'='yyyyMMdd','date.time.format'='yyyy-MM-dd-HH.mm.ss.SSSSSS') into table ZWH.$f overwrite with load properties ('rejected.records.dir'='/tmp/rejected_records/$f.out','max.rejected.records'=0,'num.map.tasks'=8);" >> ./ddl/$f.ddl
+echo "load hadoop using file url '/files/$csvfile' with source properties ('field.delimiter'='|',
+'ignore.extra.fields'='false',
+'date.time.format'='yyyy-MM-dd-HH.mm.ss.SSSSSS',
+'date.time.format'='yyyyMMdd') into table ZWH.$f overwrite with load properties ('rejected.records.dir'='/tmp/rejected_records/$f.out','max.rejected.records'=10,'num.map.tasks'=8);" >> ./ddl/$f.ddl
 
 ## Loading the data with JQSH
 echo "Loading the data of the $f table on BigSQL with JSQSH."
@@ -34,3 +43,5 @@ echo "Loading the data of the $f table on BigSQL with JSQSH."
 ## Seeing the output
 echo "---- JSQSH output of jsqsh-$f.out: ----"
 cat ./out/jsqsh-$f.out
+echo "------------ Rejected path ------------"
+echo "/tmp/rejected_records/$f.out"
