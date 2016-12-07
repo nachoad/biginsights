@@ -30,17 +30,19 @@ fi
 
 ## Creating the load statement on a ddl file
 echo -e "\n@@@@@@@@@@@@@@@"
-echo "Creating the $f.ddl file for the load on BigSQL..."
+echo "@@@ Creating the $f.ddl file for the load on BigSQL..."
 echo "load hadoop using file url '/files/$csvfile' with source properties ('field.delimiter'='|',
 'ignore.extra.fields'='false',
-'date.time.format'='yyyy-MM-dd-HH.mm.ss.SSSSSS',
-'date.time.format'='yyyyMMdd') into table ZWH.$f overwrite with load properties ('rejected.records.dir'='/tmp/rejected_records/$f.out','max.rejected.records'=10,'num.map.tasks'=8);" >> ./ddl/$f.ddl
+'date.time.format'='\"yyyy-MM-dd-HH.mm.ss.SSSSSS\"',
+'date.time.format'='yyyyMMdd',
+'quote.char' = '\"',
+'allow.multiline.record' = 'true') into table ZWH.$f overwrite with load properties ('rejected.records.dir'='/tmp/rejected_records/$f.out','max.rejected.records'=10,'num.map.tasks'=8);" >> ./ddl/$f.ddl
 
 ## Loading the data with JQSH
-echo "Loading the data of the $f table on BigSQL with JSQSH."
+echo "@@@ Loading the data of the $f table on BigSQL with JSQSH."
 /usr/ibmpacks/common-utils/current/jsqsh/bin/jsqsh bigsql -i ./ddl/$f.ddl 2> ./out/jsqsh-$f.out
 
-## Seeing the output
+## Showing the output
 echo "---- JSQSH output of jsqsh-$f.out: ----"
 cat ./out/jsqsh-$f.out
 echo "------------ Rejected path ------------"
