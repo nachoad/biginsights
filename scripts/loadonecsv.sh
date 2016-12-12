@@ -33,10 +33,10 @@ echo -e "\n@@@@@@@@@@@@@@@"
 echo "@@@ Creating the $f.ddl file for the load on BigSQL..."
 echo "load hadoop using file url '/files/$csvfile' with source properties ('field.delimiter'='|',
 'ignore.extra.fields'='false',
-'date.time.format'='\"yyyy-MM-dd-HH.mm.ss.SSSSSS\"',
+'date.time.format'='yyyy-MM-dd-HH.mm.ss.SSSSSS',
 'date.time.format'='yyyyMMdd',
 'quote.char' = '\"',
-'allow.multiline.record' = 'true') into table ZWH.$f overwrite with load properties ('rejected.records.dir'='/tmp/rejected_records/$f.out','max.rejected.records'=10,'num.map.tasks'=8);" >> ./ddl/$f.ddl
+'allow.multiline.record'='true') into table ZWH.$f overwrite with load properties ('rejected.records.dir'='/tmp/rejected_records/$f.out','max.rejected.records'=10,'num.map.tasks'=8);" >> ./ddl/$f.ddl
 
 ## Loading the data with JQSH
 echo "@@@ Loading the data of the $f table on BigSQL with JSQSH."
